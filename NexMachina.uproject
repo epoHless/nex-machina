@@ -11,6 +11,11 @@
 			"AdditionalDependencies": [
 				"Engine"
 			]
+		},
+		{
+			"Name": "NexCore",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	],
 	"Plugins": [
