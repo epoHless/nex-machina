@@ -7,7 +7,7 @@
 #include "Components/ActorComponent.h"
 #include "ObjectPool.generated.h"
 
-UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
+UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), Blueprintable, BlueprintType)
 class NEXCORE_API UObjectPool : public UActorComponent
 {
 	GENERATED_BODY()

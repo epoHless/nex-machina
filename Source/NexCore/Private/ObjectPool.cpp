@@ -62,7 +62,9 @@ APooledObject* UObjectPool::SpawnPooledObject()
 
 		if (PoolableActor != nullptr)
 		{
+			PoolableActor->SetActive(false);			
 			SetupPooledActor(PoolableActor);
+			
 			return PoolableActor;
 		}
 	}
