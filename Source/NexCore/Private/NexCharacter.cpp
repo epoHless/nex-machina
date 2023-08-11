@@ -22,17 +22,27 @@ void ANexCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 
 	PlayerInputComponent->BindAxis("X Movement", this, &ANexCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("Y Movement", this, &ANexCharacter::MoveRight);
+	
+	PlayerInputComponent->BindAxis("X Rotation", this, &ANexCharacter::Rotate);
 }
 
-void ANexCharacter::MoveRight(float Y)
+void ANexCharacter::MoveRight(float Value)
 {
 	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
-	AddMovementInput(Direction, Y);
+	AddMovementInput(Direction, Value);
 }
 
-void ANexCharacter::MoveForward(float X)
+void ANexCharacter::MoveForward(float Value)
 {
 	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
-	AddMovementInput(Direction, X);
+	AddMovementInput(Direction, Value);
+}
+
+void ANexCharacter::Rotate(float Value)
+{
+	if(Value)
+	{
+		AddControllerYawInput(Value);
+	}
 }
 

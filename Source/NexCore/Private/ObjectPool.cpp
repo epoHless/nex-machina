@@ -40,6 +40,9 @@ void UObjectPool::SetupPooledActor(APooledObject* PoolableActor)
 	PoolableActor->TeleportTo(FVector(0,0,0), FRotator(0,0,0));
 	PoolableActor->SetLifeSpan(PooledObjectLifeTime);
 	PoolableActor->SetActive(true);
+
+	PoolableActor->OnObjectRequest(GetOwner()->GetActorForwardVector());
+	
 	SpawnedPoolIndexes.Add(PoolableActor->GetPoolIndex());
 }
 

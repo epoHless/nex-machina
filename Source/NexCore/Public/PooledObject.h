@@ -30,6 +30,9 @@ public:
 	
 	int GetPoolIndex();
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "PooledObject")
+	void OnObjectRequest(FVector Direction);
+
 protected:
 
 	bool Active;
