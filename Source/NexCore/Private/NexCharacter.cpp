@@ -8,7 +8,6 @@ ANexCharacter::ANexCharacter()
 void ANexCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 void ANexCharacter::Tick(float DeltaTime)
@@ -28,13 +27,13 @@ void ANexCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 
 void ANexCharacter::MoveRight(float Value)
 {
-	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
+	const FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
 	AddMovementInput(Direction, Value);
 }
 
 void ANexCharacter::MoveForward(float Value)
 {
-	FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
+	const FVector Direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
 	AddMovementInput(Direction, Value);
 }
 

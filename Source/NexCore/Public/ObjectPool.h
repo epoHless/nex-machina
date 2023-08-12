@@ -14,6 +14,7 @@ class NEXCORE_API UObjectPool : public UActorComponent
 
 public:
 	UObjectPool();
+	
 	void InstantiatePoolableActors();
 
 	UFUNCTION(BlueprintCallable, Category = "Object Pool")
@@ -22,10 +23,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Object Pool")
 	TSubclassOf<class APooledObject> PooledObjectSubclass;
 
-	UPROPERTY(EditAnywhere, Category = "Object Pool")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Object Pool")
 	int PoolSize = 20;
 
-	UPROPERTY(EditAnywhere, Category = "Object Pool")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Object Pool")
 	float PooledObjectLifeTime = 0.0f;
 
 	UFUNCTION()
