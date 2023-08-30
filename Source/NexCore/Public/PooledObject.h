@@ -26,9 +26,9 @@ public:
 	void SetPoolIndex(int Index);
 
 	UFUNCTION(BlueprintPure)
-	bool IsActive();
+	bool IsActive() const;
 	
-	int GetPoolIndex();
+	int GetPoolIndex() const;
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "PooledObject")
 	void OnObjectRequest(FVector Direction);

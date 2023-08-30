@@ -1,13 +1,7 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+﻿#include "PooledObject.h"
 
-
-#include "PooledObject.h"
-
-
-// Sets default values
 APooledObject::APooledObject()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 }
 
@@ -35,13 +29,12 @@ void APooledObject::SetPoolIndex(int Index)
 	PoolIndex = Index;
 }
 
-bool APooledObject::IsActive()
+bool APooledObject::IsActive() const
 {
 	return Active;
 }
 
-int APooledObject::GetPoolIndex()
+int APooledObject::GetPoolIndex() const
 {
 	return PoolIndex;
 }
-
