@@ -22,6 +22,6 @@ protected:
 public:
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintGetter)
+	UFUNCTION(BlueprintPure, BlueprintCallable)
 	UPowerUp* GetPowerUp() const { return PowerUp.GetDefaultObject(); }
 };

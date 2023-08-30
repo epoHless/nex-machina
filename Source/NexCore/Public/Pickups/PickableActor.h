@@ -25,5 +25,5 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Pick Up")
-	virtual void OnPickUp(ANexCharacter* Player);
+	void OnPickUp(ANexCharacter* Player);
 };
