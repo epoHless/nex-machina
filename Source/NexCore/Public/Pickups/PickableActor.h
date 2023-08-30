@@ -2,12 +2,13 @@
 
 #include "CoreMinimal.h"
 #include "NexCharacter.h"
+#include "PooledObject.h"
 #include "GameFramework/Actor.h"
 #include "Interfaces/Pickable.h"
 #include "PickableActor.generated.h"
 
 UCLASS(Abstract, Blueprintable, BlueprintType)
-class NEXCORE_API APickableActor : public AActor, public IPickable
+class NEXCORE_API APickableActor : public APooledObject, public IPickable
 {
 	GENERATED_BODY()
 
