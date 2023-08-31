@@ -1,5 +1,10 @@
 ﻿#include "Pickups/PowerUpPickable.h"
 
+void APowerUpPickable::Deactivate()
+{
+	Super::Deactivate();
+}
+
 APowerUpPickable::APowerUpPickable()
 {
 	PrimaryActorTick.bCanEverTick = true;

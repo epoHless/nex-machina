@@ -32,6 +32,9 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "PooledObject")
 	void OnObjectRequest(FVector Direction);
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "PooledObject")
+	void OnObjectDeactivated();
 
 protected:
 

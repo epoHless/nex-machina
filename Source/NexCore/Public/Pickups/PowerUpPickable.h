@@ -9,7 +9,12 @@
 UCLASS()
 class NEXCORE_API APowerUpPickable : public APickableActor
 {
+public:
+	virtual void Deactivate() override;
+
+private:
 	GENERATED_BODY()
+
 public:
 	APowerUpPickable();
 

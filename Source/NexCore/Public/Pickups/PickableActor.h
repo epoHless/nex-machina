@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "NexCharacter.h"
-#include "PooledObject.h"
+#include "ObjectPool/PooledObject.h"
 #include "GameFramework/Actor.h"
 #include "Interfaces/Pickable.h"
 #include "PickableActor.generated.h"
@@ -15,12 +15,11 @@ class NEXCORE_API APickableActor : public APooledObject, public IPickable
 public:
 	APickableActor();
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class USphereComponent* SphereComponent;
 	
 protected:
 	virtual void BeginPlay() override;
-
 
 public:
 	virtual void Tick(float DeltaTime) override;

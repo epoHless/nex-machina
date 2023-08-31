@@ -1,4 +1,4 @@
-﻿#include "HealthComponent.h"
+﻿#include "Components/HealthComponent.h"
 
 UHealthComponent::UHealthComponent()
 {

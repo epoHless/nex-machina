@@ -1,4 +1,4 @@
-﻿#include "PooledObject.h"
+﻿#include "ObjectPool/PooledObject.h"
 
 APooledObject::APooledObject()
 {
@@ -7,6 +7,8 @@ APooledObject::APooledObject()
 
 void APooledObject::Deactivate()
 {
+	OnObjectDeactivated();
+	
 	SetActive(false);
 	GetWorldTimerManager().ClearAllTimersForObject(this);
 	OnPooledObjectDespawn.Broadcast(this);
