@@ -1,11 +1,11 @@
 ﻿#include "Enemies/NexEnemy.h"
 
-#include "Components/HealthComponent.h"
+#include "Components/CapsuleComponent.h"
 
 ANexEnemy::ANexEnemy()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
+	CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Collision"));
 }
 
 void ANexEnemy::BeginPlay()

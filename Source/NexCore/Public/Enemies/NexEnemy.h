@@ -13,7 +13,7 @@ public:
 	ANexEnemy();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class UHealthComponent* HealthComponent;
+	class UCapsuleComponent* CapsuleComponent;
 	
 protected:
 	virtual void BeginPlay() override;
