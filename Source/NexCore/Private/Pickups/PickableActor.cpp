@@ -1,5 +1,4 @@
 ﻿#include "Pickups/PickableActor.h"
-
 #include "Components/SphereComponent.h"
 
 APickableActor::APickableActor()
@@ -7,7 +6,6 @@ APickableActor::APickableActor()
 	PrimaryActorTick.bCanEverTick = true;
 
 	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("Collider"));
-	SphereComponent->RegisterComponent();
 }
 
 void APickableActor::BeginPlay()
