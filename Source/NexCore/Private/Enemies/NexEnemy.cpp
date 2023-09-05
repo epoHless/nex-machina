@@ -17,8 +17,3 @@ void ANexEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
-
-void ANexEnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-}

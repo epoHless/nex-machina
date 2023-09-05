@@ -2,10 +2,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "ObjectPool/PooledObject.h"
 #include "NexEnemy.generated.h"
 
 UCLASS(Abstract, Blueprintable, BlueprintType)
-class NEXCORE_API ANexEnemy : public APawn
+class NEXCORE_API ANexEnemy : public APooledObject
 {
 	GENERATED_BODY()
 
@@ -20,6 +21,4 @@ protected:
 
 public:
 	virtual void Tick(float DeltaTime) override;
-
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 };
