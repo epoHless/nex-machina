@@ -77,5 +77,6 @@ APooledObject* UObjectPool::SpawnPooledObject()
 
 void UObjectPool::OnPooledObjectDespawn(APooledObject* PooledObject)
 {
+	OnObjectDespawned(PooledObject);
 	SpawnedPoolIndexes.Remove(PooledObject->GetPoolIndex());
 }

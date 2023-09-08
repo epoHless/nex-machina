@@ -31,6 +31,9 @@ public:
 
 	UFUNCTION()
 	void OnPooledObjectDespawn(APooledObject* PooledObject);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnObjectDespawned(APooledObject* PooledObject);
 	
 protected:
 	virtual void BeginPlay() override;
