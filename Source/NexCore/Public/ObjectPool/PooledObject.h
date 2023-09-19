@@ -16,6 +16,7 @@ class NEXCORE_API APooledObject : public AActor
 public:
 	APooledObject();
 
+	UPROPERTY(BlueprintAssignable, Category = "Object Pool")
 	FPooledObjectDelegate OnPooledObjectDespawn;
 
 	UFUNCTION(BlueprintCallable, Category = "Pooled Object")
