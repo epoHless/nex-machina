@@ -14,21 +14,13 @@ class NEXCORE_API UObjectPool : public UActorComponent
 
 public:
 	UObjectPool();
-	
-	void InstantiatePoolableActors();
-
-	UFUNCTION(BlueprintCallable, Category = "Object Pool")
-	APooledObject* SpawnPooledObject();
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Object Pool")
 	TSubclassOf<class APooledObject> PooledObjectSubclass;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Object Pool")
-	int PoolSize = 20;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Object Pool")
-	float PooledObjectLifeTime = 0.0f;
-
+	UFUNCTION(BlueprintCallable, Category = "Object Pool")
+	virtual APooledObject* SpawnPooledObject();
+	
 	UFUNCTION()
 	void OnPooledObjectDespawn(APooledObject* PooledObject);
 
@@ -36,10 +28,23 @@ public:
 	void OnObjectDespawned(APooledObject* PooledObject);
 	
 protected:
+	
 	virtual void BeginPlay() override;
+	
 	void SetupPooledActor(APooledObject* PoolableActor);
 
 	TArray<APooledObject*> ObjectPool;
 	TArray<int> SpawnedPoolIndexes;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Object Pool")
+	int PoolSize = 20;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Object Pool")
+	float PooledObjectLifeTime = 0.0f;
+	
+	UFUNCTION(BlueprintCallable, Category = "Object Pool")
+	void InstantiatePoolableActors();
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Object Pool")
+	bool SpawnOnStart = true;
 };

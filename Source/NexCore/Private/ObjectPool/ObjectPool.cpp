@@ -8,7 +8,7 @@ UObjectPool::UObjectPool()
 void UObjectPool::BeginPlay()
 {
 	Super::BeginPlay();
-	InstantiatePoolableActors();
+	if(SpawnOnStart) InstantiatePoolableActors();
 }
 
 void UObjectPool::InstantiatePoolableActors()
