@@ -16,3 +16,20 @@ void UEnemiesSubsystem::Remove(ANexEnemy* Enemy)
 		Enemies.Remove(Enemy);
 	}
 }
+
+void UEnemiesSubsystem::AddPawn(AEnemyPawn* Enemy)
+{
+	if (!PawnEnemies.Contains(Enemy))
+	{
+		PawnEnemies.Add(Enemy);
+	}
+}
+
+void UEnemiesSubsystem::RemovePawn(AEnemyPawn* Enemy)
+{
+	if (PawnEnemies.Contains(Enemy))
+	{
+		OnEnemyPawnDeath.Broadcast(Enemy);
+		PawnEnemies.Remove(Enemy);
+	}
+}

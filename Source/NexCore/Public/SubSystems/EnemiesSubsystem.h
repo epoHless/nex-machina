@@ -1,11 +1,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Enemies/EnemyPawn.h"
 #include "Enemies/NexEnemy.h"
 #include "Subsystems/WorldSubsystem.h"
 #include "EnemiesSubsystem.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnemyMulticast, ANexEnemy*, Enemy);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPawnEnemyMulticast, AEnemyPawn*, Enemy);
 
 UCLASS(BlueprintType)
 class NEXCORE_API UEnemiesSubsystem : public UWorldSubsystem
@@ -27,8 +29,23 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Remove(ANexEnemy* Enemy);
 
+	UPROPERTY(BlueprintAssignable)
+	FPawnEnemyMulticast OnEnemyPawnDeath;
+	
+	UFUNCTION(BlueprintPure)
+	TArray<AEnemyPawn*> GetPawnEnemies() const { return PawnEnemies; }
+	
+	UFUNCTION(BlueprintCallable)
+	void AddPawn(AEnemyPawn* Enemy);
+
+	UFUNCTION(BlueprintCallable)
+	void RemovePawn(AEnemyPawn* Enemy);
+
 private:
 
 	UPROPERTY()
 	TArray<ANexEnemy*> Enemies;
+
+	UPROPERTY()
+	TArray<AEnemyPawn*> PawnEnemies;
 };
