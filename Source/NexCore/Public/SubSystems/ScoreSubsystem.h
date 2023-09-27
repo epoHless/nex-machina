@@ -22,6 +22,9 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	float CurrentMultiplier;
+
+	float CurrentProgress = 0;
+	float ProgressToReach = 1;
 	
 public:
 
@@ -34,6 +37,9 @@ public:
 	UFUNCTION(BlueprintPure, BlueprintCallable)
 	float GetMultiplier() const { return CurrentMultiplier; }
 
+	UFUNCTION(BlueprintPure, BlueprintCallable)
+	float GetProgress() const { return CurrentProgress; }
+
 	UFUNCTION(BlueprintCallable)
-	void AssignScore(float Score, float Multiplier);
+	void AssignScore(float Score, float Progress);
 };

@@ -7,9 +7,18 @@ void UScoreSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 	CurrentMultiplier = 1;
 }
 
-void UScoreSubsystem::AssignScore(float Score, float Multiplier)
+void UScoreSubsystem::AssignScore(float Score, float Progress)
 {
-	CurrentMultiplier += Multiplier;
+	CurrentProgress += Progress;
+
+	if(CurrentProgress > ProgressToReach)
+	{
+		CurrentMultiplier++;
+
+		const auto LeftOverProgress = CurrentProgress - ProgressToReach;
+		CurrentProgress = 0 + LeftOverProgress;
+	}
+	
 	const float AdjustedScore = Score * CurrentMultiplier;
 
 	CurrentScore = CurrentScore + AdjustedScore;
