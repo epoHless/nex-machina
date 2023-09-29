@@ -16,7 +16,7 @@ public:
 	int32 Health = 1;
 
 	UFUNCTION(BlueprintCallable)
-	void TakeDamage();
+	void TakeDamage(int32 Damage);
 	
 protected:
 	

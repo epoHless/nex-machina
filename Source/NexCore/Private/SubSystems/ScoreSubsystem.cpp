@@ -7,6 +7,16 @@ void UScoreSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 	CurrentMultiplier = 1;
 }
 
+void UScoreSubsystem::SetMultiplier(float Multiplier)
+{
+	CurrentMultiplier = Multiplier;
+}
+
+void UScoreSubsystem::SetProgress(float Progress)
+{
+	CurrentProgress = Progress;
+}
+
 void UScoreSubsystem::AssignScore(float Score, float Progress)
 {
 	CurrentProgress += Progress;

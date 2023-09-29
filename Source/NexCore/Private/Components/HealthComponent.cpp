@@ -13,9 +13,10 @@ void UHealthComponent::OnDeath_Implementation()
 {
 }
 
-void UHealthComponent::TakeDamage()
+void UHealthComponent::TakeDamage(int32 Damage = 1)
 {
-	--Health;
+	Health -= Damage;
+	
 	OnDamageTaken();
 	
 	if(Health <= 0)

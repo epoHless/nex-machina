@@ -40,6 +40,12 @@ public:
 	UFUNCTION(BlueprintPure, BlueprintCallable)
 	float GetProgress() const { return CurrentProgress; }
 
+	UFUNCTION(BlueprintCallable, BlueprintCallable)
+	void SetMultiplier(float Multiplier);
+
+	UFUNCTION(BlueprintCallable, BlueprintCallable)
+	void SetProgress(float Progress);
+
 	UFUNCTION(BlueprintCallable)
 	void AssignScore(float Score, float Progress);
 };
