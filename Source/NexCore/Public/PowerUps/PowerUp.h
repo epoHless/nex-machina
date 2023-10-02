@@ -13,6 +13,12 @@ class NEXCORE_API UPowerUp : public UObject
 
 public:
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power Up")
+	bool CanStack = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power Up")
+	int CurrentStacks = 1;
+
 	UPROPERTY(EditAnywhere)
 	UTexture* PPImage;
 
